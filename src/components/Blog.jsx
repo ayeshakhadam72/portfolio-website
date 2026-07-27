@@ -65,11 +65,11 @@ const Blog = () => {
                   </div>
 
                   <h3 className="text-base font-bold text-white mb-3 line-clamp-2 leading-snug">
-                    {blog.tPrefix ? t(blog.tPrefix + 'title') || blog.title : blog.title}
+                    {blog.tPrefix && t(blog.tPrefix + 'title') !== (blog.tPrefix + 'title') ? t(blog.tPrefix + 'title') : blog.title}
                   </h3>
 
                   <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                    {blog.tPrefix ? t(blog.tPrefix + 'desc') || blog.description : blog.description}
+                    {blog.tPrefix && t(blog.tPrefix + 'desc') !== (blog.tPrefix + 'desc') ? t(blog.tPrefix + 'desc') : blog.description}
                   </p>
 
                   <div className="mt-auto pt-4 border-t border-white/5">

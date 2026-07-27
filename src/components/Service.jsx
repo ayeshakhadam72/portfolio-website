@@ -1,61 +1,53 @@
 import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { FiCpu, FiMessageSquare, FiStar, FiTerminal, FiZap, FiLink, FiEye, FiMic, FiBookOpen } from 'react-icons/fi';
+import { FiMessageSquare, FiBookOpen, FiUsers, FiTrendingUp, FiCpu, FiServer, FiPieChart, FiLink, FiCloud } from 'react-icons/fi';
+import { FaRocket, FaRobot, FaBolt, FaLaptopCode } from 'react-icons/fa';
 
 const services = [
   {
-    tPrefix: "serv1_",
-    title: "Machine Learning (ML)",
-    description: "I build intelligent ML models that identify patterns in complex datasets, make accurate predictions, and continuously learn to optimize decision-making and business outcomes.",
-    icon: <FiCpu />,
-  },
-  {
-    tPrefix: "serv2_",
-    title: "Natural Language Processing",
-    description: "I develop NLP solutions that understand, interpret, and process human language — from intelligent document analysis and sentiment understanding to conversational AI.",
+    title: "AI Chatbots & Virtual Assistants",
+    description: "Develop smart conversational AI using OpenAI, Gemini, Claude, or open-source LLMs. I create chatbots that provide natural interactions, automate support, and improve customer engagement.",
     icon: <FiMessageSquare />,
   },
   {
-    tPrefix: "serv3_",
-    title: "Generative AI",
-    description: "I design and deploy Generative AI systems that automate content creation, produce valuable insights, and deliver personalized, context-aware user experiences at scale.",
-    icon: <FiStar />,
+    title: "RAG & Knowledge Base Systems",
+    description: "Transform your documents into intelligent assistants using Retrieval-Augmented Generation (RAG). Enable users to search, analyze, and chat with PDFs, manuals, and enterprise knowledge bases.",
+    icon: <FiBookOpen />,
   },
   {
-    tPrefix: "serv4_",
-    title: "Large Language Models (LLM)",
-    description: "I build LLM-powered applications — intelligent chatbots, virtual assistants, enterprise search tools, and automated knowledge systems that supercharge team productivity.",
-    icon: <FiTerminal />,
+    title: "Multi-Agent AI Systems",
+    description: "Design AI agents that collaborate to solve complex tasks autonomously. Using LangGraph and CrewAI, I build workflows for research, automation, planning, and decision-making.",
+    icon: <FiUsers />,
   },
   {
-    tPrefix: "serv5_",
-    title: "AI Automation & Workflows",
-    description: "I design end-to-end AI automation pipelines using tools like Make, Zapier, and n8n — eliminating repetitive tasks and enabling intelligent, self-operating business workflows.",
-    icon: <FiZap />,
+    title: "AI Trading & Financial Solutions",
+    description: "Develop AI-powered trading platforms, market analysis tools, and automated trading agents. Integrate real-time market data, technical indicators, and predictive machine learning models.",
+    icon: <FiTrendingUp />,
   },
   {
-    tPrefix: "serv6_",
-    title: "Model Context Protocol (MCP)",
-    description: "I implement MCP solutions that seamlessly connect AI systems to business applications, databases, and workflows — enabling more accurate, relevant, and context-aware AI responses.",
+    title: "Machine Learning Solutions",
+    description: "Create custom machine learning models for prediction, classification, recommendation, and anomaly detection. From data preprocessing to deployment, I deliver end-to-end ML solutions.",
+    icon: <FiCpu />,
+  },
+  {
+    title: "FastAPI & AI Backend Development",
+    description: "Build high-performance backend APIs for AI applications with FastAPI and Python. Secure, scalable, and optimized services that integrate seamlessly with web and mobile applications.",
+    icon: <FiServer />,
+  },
+  {
+    title: "Data Analytics & Predictive Intelligence",
+    description: "Turn raw data into actionable insights with AI and analytics. Build dashboards, forecasting models, and business intelligence solutions to support smarter decision-making.",
+    icon: <FiPieChart />,
+  },
+  {
+    title: "AI Integration & Automation",
+    description: "Integrate AI capabilities into existing applications and automate repetitive workflows. Connect LLMs, databases, third-party APIs, and cloud services for seamless business automation.",
     icon: <FiLink />,
   },
   {
-    tPrefix: "serv7_",
-    title: "Computer Vision",
-    description: "I develop computer vision systems for real-time object detection, face recognition, video analytics, and behavioral analysis — turning visual data into actionable intelligence.",
-    icon: <FiEye />,
-  },
-  {
-    tPrefix: "serv8_",
-    title: "Voice AI & Calling Agents",
-    description: "I build real-time voice AI agents that handle scheduling, lead qualification, and automated customer calls — using cutting-edge speech-to-text and text-to-speech pipelines.",
-    icon: <FiMic />,
-  },
-  {
-    tPrefix: "serv9_",
-    title: "RAG & Knowledge Systems",
-    description: "I architect Retrieval-Augmented Generation (RAG) systems that give AI models access to your private knowledge base — delivering precise, grounded, and context-aware responses.",
-    icon: <FiBookOpen />,
+    title: "AI Deployment & Cloud Solutions",
+    description: "Deploy AI models and applications on AWS, Azure, Google Cloud, or Docker environments. Ensure reliable performance, scalability, and continuous delivery for production-ready AI systems.",
+    icon: <FiCloud />,
   },
 ];
 
@@ -196,11 +188,11 @@ const Service = () => {
               {t('servicesTitle')}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-[52px] font-bold mb-4  text-white tracking-tight mb-5 leading-tight">
-              {t('servicesHeading1') || 'My AI Expertise &'}&nbsp;
-              <span style={{ color: '#f75023' }}>{t('servicesHeading2') || 'Capabilities'}</span>
+              My AI Expertise &amp;&nbsp;
+              <span style={{ color: '#f75023' }}>Capabilities</span>
             </h2>
             <p className="text-slate-400 text-base sm:text-lg  leading-relaxed max-w-2xl text-center font-sans">
-              {t('servicesDesc') || 'I deliver practical, cutting-edge AI solutions that automate workflows, amplify intelligence, and turn complex data into measurable business results.'}
+              I deliver practical, cutting-edge AI solutions that automate workflows, amplify intelligence, and turn complex data into measurable business results.
             </p>
           </div>
         </div>
@@ -230,19 +222,54 @@ const Service = () => {
         </div>
 
         {/* ── Stats Row — max-w-7xl to match other sections ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
-          <div className="flex flex-wrap justify-center gap-10 sm:gap-16 mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mt-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { value: '3+', label: t('stat1') || 'Years AI Experience' },
-              { value: '15+', label: t('stat2') || 'Projects Delivered' },
-              { value: '9', label: t('stat3') || 'AI Services Offered' },
-              { value: '3', label: t('stat4') || 'Countries Served' },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <span className="text-3xl sm:text-4xl font-extrabold font-heading" style={{ color: '#f75023' }}>
-                  {stat.value}
-                </span>
-                <p className="text-slate-400 text-sm mt-1 font-sans">{stat.label}</p>
+              { 
+                icon: <FaRocket />, 
+                value: '15+ AI Projects', 
+                desc: 'Built AI agents, LLM applications, RAG systems, trading bots, and automation tools.'
+              },
+              { 
+                icon: <FaRobot />, 
+                value: '8+ AI Technologies', 
+                desc: 'LangChain, LangGraph, FastAPI, Python, OpenAI, Gemini, FAISS, ChromaDB.'
+              },
+              { 
+                icon: <FaBolt />, 
+                value: '20+ APIs Integrated', 
+                desc: 'Integrated LLM APIs, vector databases, financial APIs, authentication, and cloud services.'
+              },
+              { 
+                icon: <FaLaptopCode />, 
+                value: '100K+ Lines of Code', 
+                desc: 'Developed scalable AI systems, backend services, and production-ready applications.'
+              },
+            ].map((stat, idx) => (
+              <div 
+                key={idx} 
+                className="group relative p-6 rounded-2xl border transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_10px_40px_rgba(247,80,35,0.25)] hover:border-primary/50 overflow-hidden cursor-default"
+                style={{
+                  backgroundColor: 'rgba(255,255,255,0.02)',
+                  borderColor: 'rgba(255,255,255,0.08)',
+                  backdropFilter: 'blur(10px)'
+                }}
+              >
+                {/* Hover animated glow background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#f75023]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                
+                {/* Diagonal sweep animation on hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none" />
+
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Attractive Icon Box with bounce/rotate on hover */}
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-5 border transition-all duration-500 group-hover:-rotate-12 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(247,80,35,0.5)] bg-[#f75023]/10 border-[#f75023]/30 text-[#f75023] group-hover:bg-[#f75023] group-hover:text-white">
+                    {stat.icon}
+                  </div>
+                  
+                  <h3 className="text-white font-bold text-[18px] leading-snug font-heading mb-3 group-hover:text-[#f75023] transition-colors duration-300">{stat.value}</h3>
+                  <p className="text-slate-400 text-[13px] sm:text-[16px] leading-relaxed font-sans">{stat.desc}</p>
+                </div>
               </div>
             ))}
           </div>

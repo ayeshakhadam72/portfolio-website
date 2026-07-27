@@ -24,6 +24,8 @@ const journeyItems = [
     tPrefix: "j1_",
     title: "AI Engineer (Active Job)",
     subtitle: "Tecveq (UK-based)",
+    companyLogo: "/tecveq.png",
+    flag: "🇬🇧",
     period: "2025 - Present",
     description: "Designing and integrating cutting-edge LLM applications, voice assistants, and cloud AI infrastructure to automate business workflows.",
     icon: <FiCpu className="w-6 h-6" />,
@@ -35,8 +37,10 @@ const journeyItems = [
     type: "experience",
     tPrefix: "j2_",
     title: "AI Engineer",
-    subtitle: "Findigit",
-    period: "2023 - 2024",
+    subtitle: "Findigits (Bahrain-based)",
+    companyLogo: "/findigits.png",
+    flag: "🇧🇭",
+    period: "2022 - 2024",
     description: "Built customer support chatbots, product recommendation systems, and computer vision models for object detection and face recognition.",
     icon: <FiEye className="w-6 h-6" />,
     tags: ["Computer Vision", "OpenCV", "PyTorch", "Chatbots", "NLP", "Python"]
@@ -626,8 +630,14 @@ const Journey = () => {
 
                         {/* 2. Company Subtitle on left, Duration on right */}
                         <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                          <span className="text-slate-400 text-sm font-bold font-sans">
+                          <span className="text-slate-400 text-sm font-bold font-sans flex items-center gap-2">
+                            {item.companyLogo && (
+                              <img src={item.companyLogo} alt="Logo" className="w-10 h-10 object-contain rounded bg-white/5 px-0.5 py-0.2 border border-white/10" />
+                            )}
                             {t(item.tPrefix + 'sub')}
+                            {item.flag && (
+                              <span className="text-lg leading-none select-none drop-shadow-sm">{item.flag}</span>
+                            )}
                           </span>
                           <span
                             className="inline-block px-3 py-1 rounded-full text-xs font-bold font-sans text-slate-300 border"

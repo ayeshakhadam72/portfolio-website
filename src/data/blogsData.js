@@ -1,6 +1,7 @@
 export const blogsData = [
   {
     id: 1,
+    tPrefix: 'blog1_',
     title: "Best Local AI Models For Coding, Voice & Agents In 2026",
     category: "Agentic AI",
     date: "Jun 9, 2026",
@@ -20,6 +21,7 @@ export const blogsData = [
   },
   {
     id: 2,
+    tPrefix: 'blog2_',
     title: "Ollama + Open WebUI: Set Up A Private ChatGPT For Your...",
     category: "Agentic AI",
     date: "Jun 4, 2026",
@@ -38,6 +40,7 @@ export const blogsData = [
   },
   {
     id: 3,
+    tPrefix: 'blog3_',
     title: "Why Your Team Needs A Private AI Server In 2026",
     category: "Agentic AI",
     date: "Jun 3, 2026",
@@ -56,6 +59,7 @@ export const blogsData = [
   },
   {
     id: 4,
+    tPrefix: 'blog4_',
     title: "Make Money Through Affiliate Marketing By Using MaxBounty",
     category: "Agentic AI",
     date: "Jul 2, 2026",
@@ -74,6 +78,7 @@ export const blogsData = [
   },
   {
     id: 5,
+    tPrefix: 'blog5_',
     title: "Caveman, Prompt Caching, And Model Routing: What Actually...",
     category: "Agentic AI",
     date: "Jun 18, 2026",
@@ -92,6 +97,7 @@ export const blogsData = [
   },
   {
     id: 6,
+    tPrefix: 'blog6_',
     title: "RAG + MCP: How To Make Your Local AI Smarter Than ChatGPT...",
     category: "Agentic AI",
     date: "Jun 16, 2026",

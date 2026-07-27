@@ -79,6 +79,7 @@ const Contact = () => {
 
         {/* Form Container */}
         <div className="bg-[#101424] p-4 sm:p-12 rounded-2xl shadow-2xl border border-white/5">
+
           <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

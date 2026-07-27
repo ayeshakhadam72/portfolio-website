@@ -2,6 +2,9 @@ import React from 'react';
 import { FiArrowLeft, FiCalendar, FiClock, FiUser } from 'react-icons/fi';
 import { blogsData } from '../data/blogsData';
 import { useLanguage } from '../context/LanguageContext';
+import Navbar from './Navbar/Navbar';
+import Footer from './Footer';
+import BlogComments from './BlogComments';
 
 const BlogDetail = ({ blog, onBack }) => {
   const { t } = useLanguage();
@@ -13,20 +16,16 @@ const BlogDetail = ({ blog, onBack }) => {
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-[#0a0a0a] text-gray-300 font-sans">
-      {/* Header/Nav */}
-      <div className="sticky top-0 z-10 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 px-6 py-4 flex items-center justify-between">
+      <Navbar />
+
+      <div className="pt-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <button 
           onClick={onBack}
-          className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors cursor-pointer"
+          className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors cursor-pointer mb-8"
         >
           <FiArrowLeft /> {t('blogBack') || 'Back to Blogs'}
         </button>
-        <div className="text-xl font-bold text-white tracking-widest flex items-center gap-2">
-          <span>WEB SPHERE</span>
-        </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           
           {/* Main Content (Left Column) */}
@@ -65,14 +64,14 @@ const BlogDetail = ({ blog, onBack }) => {
 
             {/* Title */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              {blog.tPrefix ? t(blog.tPrefix + 'title') || blog.title : blog.title}
+              {blog.tPrefix && t(blog.tPrefix + 'title') !== (blog.tPrefix + 'title') ? t(blog.tPrefix + 'title') : blog.title}
             </h1>
 
             {/* Content Body */}
             <div 
               className="prose prose-invert prose-lg max-w-none text-gray-400 leading-relaxed 
                          prose-headings:text-white prose-a:text-primary prose-strong:text-white"
-              dangerouslySetInnerHTML={{ __html: blog.tPrefix ? t(blog.tPrefix + 'content') || blog.content : blog.content }}
+              dangerouslySetInnerHTML={{ __html: blog.tPrefix && t(blog.tPrefix + 'content') !== (blog.tPrefix + 'content') ? t(blog.tPrefix + 'content') : blog.content }}
             />
           </div>
 
@@ -111,9 +110,9 @@ const BlogDetail = ({ blog, onBack }) => {
                       />
                     </div>
                     <div className="flex flex-col justify-center">
-                      <span className="text-xs text-primary font-bold mb-1">{post.date}</span>
+                      <div className="text-primary text-xs font-bold mb-1">{post.date}</div>
                       <h4 className="text-white text-sm font-semibold leading-snug group-hover:text-primary transition-colors line-clamp-2">
-                        {post.tPrefix ? t(post.tPrefix + 'title') || post.title : post.title}
+                        {post.tPrefix && t(post.tPrefix + 'title') !== (post.tPrefix + 'title') ? t(post.tPrefix + 'title') : post.title}
                       </h4>
                     </div>
                   </div>
@@ -124,6 +123,8 @@ const BlogDetail = ({ blog, onBack }) => {
           </div>
         </div>
       </div>
+      <BlogComments />
+      <Footer />
     </div>
   );
 };

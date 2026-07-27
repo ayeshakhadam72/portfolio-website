@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiPhone, FiMapPin, FiGlobe, FiMail, FiChevronRight } from 'react-icons/fi';
+import { FiPhone, FiMapPin, FiGlobe, FiMail, FiChevronRight, FiArrowUpRight } from 'react-icons/fi';
 import { FaLinkedinIn, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -15,9 +15,9 @@ const Footer = () => {
       }}
     >
       {/* ── Main Footer Overlay Container (SAMANEX Style) bg-[#070b14]/75 ── */}
-      <div className="relative z-10 max-w-[1500px] mx-auto  backdrop-blur-sm border-b border-l border-r border-white/10 shadow-2xl rounded-b-3xl">
+      <div className="relative z-10 max-w-[1500px] mx-auto   backdrop-blur-sm border-b border-l border-r border-white/10 shadow-2xl rounded-b-3xl">
 
-        <div className="px-8 sm:px-12 md:px-16 py-16">
+        <div className="px-8 sm:px-12 md:px-16 py-16  bg-[#070b14]/75">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
 
             {/* Column 1: Logo & Info */}
@@ -26,7 +26,7 @@ const Footer = () => {
               <div className="flex items-center gap-3 mb-6">
                 <img src="/logo.png" alt="Muneeb Farid" className="h-full w-full object-contain" onError={(e) => e.target.style.display = 'none'} />
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed mb-8 font-sans">
+              <p className="text-white text-sm leading-relaxed mb-8 font-sans">
                 {t('footerDesc') || 'Helping businesses grow, scale, and achieve long-term success through intelligent AI solutions, strategic automation, and data-driven insights.'}
               </p>
 
@@ -62,7 +62,7 @@ const Footer = () => {
                   <li key={link}>
                     <a
                       href={`#${link.toLowerCase().replace(' ', '')}`}
-                      className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 font-sans text-[15px]"
+                      className="text-white hover:text-primary transition-colors flex items-center gap-2 font-sans text-[15px]"
                     >
                       <FiChevronRight className="text-primary text-sm" /> {link}
                     </a>
@@ -79,21 +79,29 @@ const Footer = () => {
               <ul className="flex flex-col gap-5">
                 <li className="flex items-start gap-4">
                   <FiPhone className="text-primary text-xl mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-400 font-sans text-[15px]">+92 329 7325390</span>
+                  <span className="text-white font-sans text-[15px]">+92 329 7325390</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <FiMapPin className="text-primary text-xl mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-400 font-sans text-[15px]">
-                    farid town y block scheme 3
+                  <span className="text-white font-sans text-[15px]">
+                    Bilal colony House no 350 Sahiwal
                   </span>
                 </li>
                 <li className="flex items-start gap-4">
                   <FiGlobe className="text-primary text-xl mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-400 font-sans text-[15px]">www.muneebfarid.com</span>
+                  <a 
+                    href="https://www.muneebfarid.com" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="text-white font-sans text-[15px] hover:text-primary transition-all flex items-center gap-1 group cursor-pointer"
+                  >
+                    www.muneebfarid.com
+                    <FiArrowUpRight className="text-primary text-lg opacity-0 -translate-y-1 -translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300" />
+                  </a>
                 </li>
                 <li className="flex items-start gap-4">
                   <FiMail className="text-primary text-xl mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-400 font-sans text-[15px]">fareedmuneeb98@gmail.com</span>
+                  <span className="text-white font-sans text-[15px]">fareedmuneeb98@gmail.com</span>
                 </li>
               </ul>
             </div>
@@ -101,10 +109,10 @@ const Footer = () => {
             {/* Column 4: CTA */}
             <div className="flex flex-col">
               <h4 className="text-white text-xl font-bold mb-6 font-heading border-b border-white/10 pb-4 inline-block">
-                {t('footerCtaTitle') || "Let's Grow Your Business"}
+                Let's Grow Your Business
               </h4>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6 font-sans">
-                {t('footerCtaDesc') || "Ready to scale your business with clear, results-driven AI strategies? Let's connect and build the future."}
+              <p className="text-white text-sm leading-relaxed mb-6 font-sans">
+                Ready to scale your business with clear, results-driven AI strategies? Let's connect and build the future.
               </p>
               <button
                 onClick={() => {
@@ -123,13 +131,13 @@ const Footer = () => {
 
         {/* ── Bottom Bar ── */}
         <div className="border-t border-white/10 bg-[#04070d]/40 px-8 sm:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4 rounded-b-3xl">
-          <a href="#" className="text-slate-400 hover:text-primary transition-colors text-sm font-sans cursor-pointer">
+          <a href="#" className="text-white hover:text-primary transition-colors text-sm font-sans cursor-pointer">
             {t('footerTerms') || 'Terms & Agreements'}
           </a>
-          <p className="text-slate-500 text-sm text-center font-sans">
+          <p className="text-white/80 text-sm text-center font-sans">
             © {new Date().getFullYear()} {t('footerRights') || 'All Rights Reserved For Muneeb Farid.'}
           </p>
-          <a href="#" className="text-slate-400 hover:text-primary transition-colors text-sm font-sans cursor-pointer">
+          <a href="#" className="text-white hover:text-primary transition-colors text-sm font-sans cursor-pointer">
             {t('footerPrivacy') || 'Privacy Policy'}
           </a>
         </div>
